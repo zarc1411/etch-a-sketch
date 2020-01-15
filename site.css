@@ -1,0 +1,27 @@
+.newGridButton{
+    text-align: center;
+    padding-top: 5px;
+}
+
+.gridItem{
+    text-align: center;
+    border: 0.4px solid;
+    min-width: 32px;
+    min-height: 32px;
+    display: inline-block;
+}
+
+.gridItem-hover{
+    background-color: black;
+}
+
+.grid-clear{
+    background-color: white;
+}
+.row{
+    text-align: center;
+}
+
+.topOfContainer{
+    margin-top: 10px;
+}
