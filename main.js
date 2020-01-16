@@ -43,6 +43,7 @@ function generateRandomColor()
         color+= colorRange[Math.floor(Math.random() * 16)];
     return color;
 }
+
 function changeColor(e)
 {
     e.target.style.backgroundColor = generateRandomColor();

@@ -1,3 +1,4 @@
+
 .newGridButton{
     text-align: center;
     padding-top: 5px;
@@ -5,12 +6,15 @@
 
 .gridItem{
     text-align: center;
-    border: 0.4px solid;
-    min-width: 32px;
-    min-height: 32px;
+    border: 0.1px solid;
+    min-width: 30px;
+    min-height: 30px;
     display: inline-block;
 }
+.row{
+    font-size: 0;
 
+}
 .gridItem-hover{
     background-color: black;
 }
@@ -23,5 +27,5 @@
 }
 
 .topOfContainer{
-    margin-top: 10px;
+    margin-top: 50px;
 }
