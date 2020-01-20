@@ -12,28 +12,24 @@ button.innerHTML = "New Grid";
 button.id = "newgrid";
 buttonDiv.appendChild(button);
 
-createGrid(16 , 16);
+createGrid(16);
 
-function createGrid(numberOfRows , numberOfColumns)
+function createGrid(gridSize)
 {
-    for(let  i = 0 ; i<numberOfRows ; i++)
+    for(let i = 0 ; i<gridSize**2 ; i++)
     {
-        const row = document.createElement('div');
-        container.appendChild(row);
-        row.classList.add("row");
-        for(let j = 0 ; j<numberOfColumns ; j++)
-        {
-            const column = document.createElement('div');
-            column.classList.add("gridItem");
-            row.appendChild(column);
-        }
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('gridItem');
+        container.appendChild(gridItem);
     }
-}
+    if(gridSize)
+    container.style.gridTemplateColumns = "repeat(" + gridSize + " , 1fr)";
 
-const cell = document.querySelectorAll('.gridItem');
-cell.forEach((cell) => {
-    cell.addEventListener('mouseover' , changeColor);
-});
+    const cell = document.querySelectorAll('.gridItem');
+    cell.forEach((cell) => {
+        cell.addEventListener('mouseover' , changeColor);
+    }); 
+}
 
 function generateRandomColor()
 {
@@ -47,14 +43,29 @@ function generateRandomColor()
 function changeColor(e)
 {
     e.target.style.backgroundColor = generateRandomColor();
-    //e.target.classList.add("gridItem-hover");
 }
-//const btn = document.getElementById("newgrid");
+
 button.addEventListener('click' , clearGrid);
 
 function clearGrid(e)
 {
-    const gridItems = document.querySelectorAll(".gridItem");
-    //gridItems.forEach(item => item.classList.remove("gridItem-hover"));
-    gridItems.forEach(item => item.style.backgroundColor = "#FFFFFF");
+    while(container.firstChild)
+    {
+        container.removeChild(container.firstChild);
+    }
+    promptUser();
+}
+
+function promptUser()
+{
+    var newGridSize = prompt("How many squares(1-64)");
+    
+    if(newGridSize!=null)
+    resizeGrid(newGridSize);
+}
+
+
+function resizeGrid(newGridSize)
+{
+    createGrid(newGridSize);
 }

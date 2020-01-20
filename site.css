@@ -1,3 +1,13 @@
+body{
+    background-color:#222831;
+}
+#container{
+    display: grid;
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .newGridButton{
     text-align: center;
@@ -7,23 +17,7 @@
 .gridItem{
     text-align: center;
     border: 0.1px solid;
-    min-width: 30px;
-    min-height: 30px;
-    display: inline-block;
-}
-.row{
-    font-size: 0;
-
-}
-.gridItem-hover{
-    background-color: black;
-}
-
-.grid-clear{
-    background-color: white;
-}
-.row{
-    text-align: center;
+    background-color: #393e46;
 }
 
 .topOfContainer{
